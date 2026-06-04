@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-sora: 'Sora', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sora);
+  background: #F8F6F2;
+  color: #1A1814;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+}
+
+.dark body { background: #0F0E0C; color: #F8F6F2; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #D5D0B8; border-radius: 99px; }
+
+@keyframes swipeLeft {
+  to { transform: translateX(-150%) rotate(-20deg); opacity: 0; }
+}
+@keyframes swipeRight {
+  to { transform: translateX(150%) rotate(20deg); opacity: 0; }
+}
+
+.swipe-left { animation: swipeLeft 0.4s ease forwards; }
+.swipe-right { animation: swipeRight 0.4s ease forwards; }
+
+.gradient-text {
+  background: linear-gradient(135deg, #FF8C42 0%, #F07020 50%, #C45A10 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass {
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dark .glass {
+  background: rgba(20,18,14,0.75);
+}
+
+.pb-safe { padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px); }
+.pt-safe { padding-top: env(safe-area-inset-top, 0px); }
