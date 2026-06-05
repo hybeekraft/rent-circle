@@ -5,6 +5,8 @@ import { Mail, ArrowRight, RefreshCw } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { createClient } from '@/lib/supabase'
 
+import { Suspense } from "react"
+
 export default function VerifyPage() {
   const router = useRouter()
   const params = useSearchParams()
@@ -117,5 +119,13 @@ export default function VerifyPage() {
         {resendCooldown > 0 ? `Resend in ${resendCooldown}s` : 'Resend code'}
       </button>
     </div>
+  )
+}
+
+export default function VerifyPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <VerifyContent />
+    </Suspense>
   )
 }
