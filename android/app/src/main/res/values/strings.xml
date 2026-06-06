@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">rentcircle</string>
+    <string name="title_activity_main">rentcircle</string>
+    <string name="package_name">com.rentcircle.app</string>
+    <string name="custom_url_scheme">com.rentcircle.app</string>
+</resources>
