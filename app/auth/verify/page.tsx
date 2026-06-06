@@ -1,13 +1,11 @@
 'use client'
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { Mail, ArrowRight, RefreshCw } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { createClient } from '@/lib/supabase'
 
-import { Suspense } from "react"
-
-export default function VerifyPage() {
+function VerifyContent() {
   const router = useRouter()
   const params = useSearchParams()
   const email = params.get('email') || ''
@@ -80,7 +78,6 @@ export default function VerifyPage() {
         </div>
       )}
 
-      {/* OTP Input */}
       <div className="flex gap-3 mb-8">
         {otp.map((digit, idx) => (
           <input
