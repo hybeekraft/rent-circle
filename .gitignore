@@ -1,4 +1,5 @@
 .env.local
 .next/
 dist/
+.next
 node_modules/
